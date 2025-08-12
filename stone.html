@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mayuresh — Stone ROM Downloads & Instructions</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <meta name="description" content="Stable and custom Android ROM downloads for Stone — Infinity-X and LineageOS builds.">
+
+  <style>
+    .toggle-btn {
+      margin: 1rem 0;
+      padding: 0.5rem 1rem;
+      background: var(--btn-primary-bg, #3fa9f5);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    .toggle-btn:hover {
+      background: var(--btn-primary-hover-bg, #337acc);
+    }
+    .instructions-content {
+      display: none;
+      margin-top: 1rem;
+      line-height: 1.5;
+      background: var(--bg-secondary, #f9f9f9);
+      padding: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      max-width: 720px;
+      overflow-wrap: break-word;
+    }
+    .instructions-content.visible {
+      display: block;
+    }
+    .instructions-content pre {
+      position: relative;
+      background: rgba(255,255,255,0.05);
+      padding: 0.6rem;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    body.light .instructions-content pre {
+      background: rgba(0,0,0,0.05);
+    }
+    .instructions-content code {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      background: rgba(0,0,0,0.4);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 3px 6px;
+      cursor: pointer;
+      font-size: 0.75rem;
+      opacity: 0;
+      transition: opacity 0.2s ease, background 0.2s ease;
+    }
+    body.light .copy-btn {
+      background: rgba(0,0,0,0.1);
+      color: #000;
+    }
+    pre:hover .copy-btn {
+      opacity: 1;
+    }
+    .copy-btn:hover {
+      background: var(--accent1);
+      color: #fff;
+    }
+    .card-icon i {
+      transition: text-shadow 0.3s ease;
+    }
+    .card-icon i:hover {
+      text-shadow: 0 0 8px currentColor, 0 0 16px currentColor;
+    }
+  </style>
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">🚀</span>
+          <span class="logo-text">Mayuresh</span>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="#downloads" class="nav-link">Downloads</a>
+        <a href="#instructions" class="nav-link">Instructions</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button id="theme-toggle" class="btn-ghost" aria-pressed="false" title="Toggle light/dark">
+          <i class="fa-regular fa-moon"></i>
+        </button>
+      </nav>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main class="container main">
+    <section id="downloads" class="section reveal reveal-left">
+      <div class="section-head">
+        <h2><i class="fa-solid fa-download icon"></i> Downloads</h2>
+        <p>Stable builds for Redmi Note 12 5G / POCO X5</p>
+      </div>
+      <div class="grid">
+        <article class="card reveal reveal-left">
+          <div class="card-icon"><i class="fa-solid fa-infinity"></i></div>
+          <h3>Infinity-X (Android 16)</h3>
+          <p>Latest stable Android experience and extended customization.</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://github.com/mayuresh-releases/Infinity-X_stone" target="_blank">Download</a>
+            <a class="btn btn-outline" href="https://raw.githubusercontent.com/mayuresh2543/OTA/refs/heads/infinity-16/Changelogs/stone.txt" target="_blank">Changelog</a>
+          </div>
+        </article>
+        <article class="card reveal reveal-right">
+          <div class="card-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+          <h3>LineageOS (Android 15)</h3>
+          <p>Clean and stable Android experience with Minimal Customizations.</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://github.com/mayuresh-releases/LineageOS_stone" target="_blank">Download</a>
+            <a class="btn btn-outline" href="https://raw.githubusercontent.com/Mayuresh2543/OTA/refs/heads/lineage-22.2/Changelogs/stone.txt" target="_blank">Changelog</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Instructions -->
+    <section id="instructions" class="section reveal reveal-right">
+      <div class="section-head">
+        <h2><i class="fa-solid fa-info-circle icon"></i> Installation Instructions</h2>
+      </div>
+      <button class="toggle-btn" id="toggle-instructions-btn" aria-expanded="false">
+        Flashing Instructions
+      </button>
+      <div id="instructions-content" class="instructions-content">
+        <h3># Infinity-X for Redmi Note 12 5G / POCO X5 (stone)</h3>
+        <h3>📲 Installation Instructions</h3>
+        <hr>
+        <h4>⚠️ Before You Begin</h4>
+        <ul>
+          <li>Backup <strong>all important data</strong> to an external source. This process will erase your internal storage.</li>
+          <li>A <strong>clean flash</strong> is mandatory if you're switching from another ROM.</li>
+          <li>You <strong>must be on the latest firmware</strong> available for your device and region. Flash it manually if needed before proceeding.</li>
+          <li><strong>Recommended Recovery:</strong> Use <strong>AOSP recovery</strong>.</li>
+        </ul>
+        <hr>
+        <h4>🧹 Clean Flash (Recommended for First-Time Install)</h4>
+        <ol>
+          <li><strong>Boot into Fastboot mode</strong>
+            <pre><code>adb reboot bootloader</code></pre>
+          </li>
+          <li><strong>Flash the recovery image</strong>
+            <pre><code>fastboot flash boot &lt;recovery_filename&gt;.img</code></pre>
+          </li>
+          <li><strong>Reboot into Recovery</strong>
+            <pre><code>fastboot reboot recovery</code></pre>
+          </li>
+          <li><strong>Format data</strong> - In recovery:<br><code>Factory Reset &gt; Format Data</code></li>
+          <li>Connect the phone to your PC</li>
+          <li><strong>Sideload the ROM</strong> - In recovery:<br>`Apply update > Apply from ADB`<br>On your PC:
+            <pre><code>adb sideload &lt;rom_filename&gt;.zip</code></pre>
+          </li>
+          <li>(Optional) When prompted, choose <strong>Yes</strong> to reboot to recovery again if flashing:
+            <ul>
+              <li>GApps</li>
+              <li>Magisk</li>
+              <li>Any other .zip</li>
+            </ul>
+          </li>
+          <li>Format data again if you flashed anything in Step 7</li>
+          <li>If not flashing anything else, choose <strong>No</strong> when prompted</li>
+          <li>Reboot to system (first boot may take several minutes)</li>
+        </ol>
+        <hr>
+        <h4>🔄 ROM Update / Dirty Flash (For Updating Same ROM)</h4>
+        <h5>✅ Option 1: OTA Update</h5>
+        <ul>
+          <li>Go to: <code>Settings > System > Updater</code></li>
+          <li>Download and install the new build</li>
+          <li>Click reboot</li>
+          <li>Done!</li>
+        </ul>
+        <h5>✅ Option 2: Local Update (Via Updater App)</h5>
+        <ol>
+          <li>Place the new ROM .zip on your internal storage</li>
+          <li>Open the Updater app</li>
+          <li>Tap the 3-dot menu > <strong>Local Update</strong></li>
+          <li>Select the ROM .zip and confirm</li>
+          <li>Phone will reboot to recovery and apply the update</li>
+          <li>Done!</li>
+        </ol>
+        <h5>✅ Option 3: Manual Dirty Flash (ADB Sideload)</h5>
+        <ol>
+          <li>Boot into Recovery</li>
+          <li>In recovery: <code>Apply update > Apply from ADB</code></li>
+          <li>On PC:
+            <pre><code>adb sideload &lt;rom_filename&gt;.zip</code></pre>
+          </li>
+          <li>(Optional) Reboot back to recovery and sideload:
+            <ul>
+              <li>GApps</li>
+              <li>Magisk</li>
+            </ul>
+          </li>
+          <li>Reboot to system</li>
+        </ol>
+        <hr>
+        <h4>✅ You're Done!</h4>
+        <p>Enjoy your freshly installed or updated ROM.</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section reveal reveal-right">
+      <div class="section-head">
+        <h2><i class="fa-solid fa-envelope icon"></i> Contact Me</h2>
+        <p>Got questions or feedback? Reach out via any of the platforms below.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-icon" style="color:#0088cc;"><i class="fa-brands fa-telegram"></i></div>
+          <h3>Telegram</h3>
+          <p>Quick responses and real-time discussion.</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://t.me/mayuresh2543" target="_blank">Message Me</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-icon" style="color:#333;"><i class="fa-brands fa-github"></i></div>
+          <h3>GitHub</h3>
+          <p>View my repositories, report issues, or contribute.</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://github.com/mayuresh2543" target="_blank">Visit GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer reveal reveal-up">
+    <div class="container">
+      <p>© <span id="year"></span> By Mayuresh — Built with ❤️, hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('toggle-instructions-btn');
+      const instructions = document.getElementById('instructions-content');
+      toggleBtn.addEventListener('click', () => {
+        const isVisible = instructions.classList.toggle('visible');
+        toggleBtn.setAttribute('aria-expanded', isVisible);
+      });
+      document.querySelectorAll('#instructions-content pre').forEach(pre => {
+        const btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.innerHTML = '<i class="fa-regular fa-clipboard"></i>';
+        btn.title = 'Copy to clipboard';
+        pre.appendChild(btn);
+        btn.addEventListener('click', () => {
+          const code = pre.innerText.trim();
+          navigator.clipboard.writeText(code).then(() => {
+            btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+            btn.title = 'Copied!';
+            setTimeout(() => {
+              btn.innerHTML = '<i class="fa-regular fa-clipboard"></i>';
+              btn.title = 'Copy to clipboard';
+            }, 1500);
+          });
+        });
+      });
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

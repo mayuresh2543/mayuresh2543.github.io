@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mayuresh — Custom ROMs & Builds for Stone</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <meta name="description" content="Stable and custom Android ROM downloads for Stone — Infinity-X and LineageOS builds.">
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <a href="index.html" class="logo">
+          <span class="logo-mark" aria-hidden="true">🚀</span>
+          <span class="logo-text">Mayuresh</span>
+        </a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="stone.html" class="nav-link">Stone</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button id="theme-toggle" class="btn-ghost" aria-pressed="false" title="Toggle light/dark">
+          <i class="fa-regular fa-moon"></i>
+        </button>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Landing Section -->
+  <main class="container main">
+    <section class="section reveal reveal-left">
+      <div class="section-head">
+        <h2><i class="fa-solid fa-mobile-screen-button icon"></i> Select Your Device</h2>
+        <p>Choose your device to view downloads and instructions.</p>
+      </div>
+
+      <div class="grid">
+        <!-- Device card -->
+        <article class="card reveal reveal-left clickable" data-href="stone.html" tabindex="0" role="link" aria-label="Redmi Note 12 5G / POCO X5 (stone)">
+          <div class="card-icon"><i class="fa-solid fa-rocket"></i></div>
+          <h3>Redmi Note 12 5G / POCO X5 (stone)</h3>
+          <p>Stable builds and instructions for flashing ROMs.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section reveal reveal-up">
+      <div class="section-head">
+        <h2><i class="fa-solid fa-star icon"></i> Why Choose Us?</h2>
+        <p>We focus on stability, performance, features and security with every build.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <h3>Performance</h3>
+          <p>Tweaks for best balance of speed and battery life.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Security</h3>
+          <p>Regular security patches to keep your device safe.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon"><i class="fa-solid fa-gear"></i></div>
+          <h3>Customization</h3>
+          <p>Custom features like Dolby and ViperFX that let you make your phone truly yours.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section reveal reveal-right">
+      <div class="section-head">
+        <h2><i class="fa-solid fa-envelope icon"></i> Contact Me</h2>
+        <p>Got questions or feedback? Reach out via any of the platforms below.</p>
+      </div>
+
+      <div class="grid">
+        <!-- Telegram -->
+        <article class="card">
+          <div class="card-icon" style="color:#0088cc;"><i class="fa-brands fa-telegram"></i></div>
+          <h3>Telegram</h3>
+          <p>Quick responses and real-time discussion.</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://t.me/mayuresh2543" target="_blank" rel="noopener">
+              Message Me
+            </a>
+          </div>
+        </article>
+
+        <!-- GitHub -->
+        <article class="card">
+          <div class="card-icon" style="color:#333;"><i class="fa-brands fa-github"></i></div>
+          <h3>GitHub</h3>
+          <p>View my repositories, report issues, or contribute.</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="https://github.com/mayuresh2543" target="_blank" rel="noopener">
+              Visit GitHub
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer reveal reveal-up">
+    <div class="container">
+      <p>© <span id="year"></span> By Mayuresh — Built with ❤️, hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
