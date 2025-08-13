@@ -15,83 +15,61 @@
   <meta name="description" content="Stable and custom Android ROM downloads for Stone — Infinity-X and LineageOS builds.">
 
   <style>
-    .toggle-btn {
-      margin: 1rem 0;
-      padding: 0.5rem 1rem;
-      background: var(--btn-primary-bg, #3fa9f5);
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
-    }
-    .toggle-btn:hover {
-      background: var(--btn-primary-hover-bg, #337acc);
-    }
+    /* Use existing site button styles instead of a custom one */
+    .toggle-btn { display: none; }
+
+    /* Make the instructions live inside the card visually */
     .instructions-content {
       display: none;
       margin-top: 1rem;
-      line-height: 1.5;
-      background: var(--bg-secondary, #f9f9f9);
-      padding: 1rem;
-      border-radius: 6px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-      max-width: 720px;
+      line-height: 1.6;
+      background: transparent;   /* card already has its own bg */
+      padding: 0;                /* rely on card padding */
+      border-radius: 0;
+      box-shadow: none;
+      max-width: 100%;
       overflow-wrap: break-word;
     }
-    .instructions-content.visible {
-      display: block;
+    .instructions-content.visible { display: block; }
+
+    .instructions-content h4,
+    .instructions-content h5 {
+      margin: 1rem 0 .5rem;
     }
+
     .instructions-content pre {
       position: relative;
       background: rgba(255,255,255,0.05);
-      padding: 0.6rem;
-      border-radius: 6px;
+      padding: 0.75rem 2.5rem 0.75rem 0.75rem;
+      border-radius: 8px;
       overflow-x: auto;
     }
-    body.light .instructions-content pre {
-      background: rgba(0,0,0,0.05);
-    }
-    .instructions-content code {
-      background: none;
-      padding: 0;
-      border-radius: 0;
-      font-family: monospace;
-      font-size: 0.9em;
-    }
+    body.light .instructions-content pre { background: rgba(0,0,0,0.06); }
+
+    .instructions-content code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: .95em; }
+
+    /* Copy button for code blocks */
     .copy-btn {
       position: absolute;
-      top: 6px;
-      right: 6px;
+      top: 8px;
+      right: 8px;
       background: rgba(0,0,0,0.4);
       color: #fff;
       border: none;
-      border-radius: 4px;
-      padding: 3px 6px;
+      border-radius: 6px;
+      padding: 6px 8px;
       cursor: pointer;
       font-size: 0.75rem;
       opacity: 0;
       transition: opacity 0.2s ease, background 0.2s ease;
     }
-    body.light .copy-btn {
-      background: rgba(0,0,0,0.1);
-      color: #000;
-    }
-    pre:hover .copy-btn {
-      opacity: 1;
-    }
-    .copy-btn:hover {
-      background: var(--accent1);
-      color: #fff;
-    }
-    .card-icon i {
-      transition: text-shadow 0.3s ease;
-    }
-    .card-icon i:hover {
-      text-shadow: 0 0 8px currentColor, 0 0 16px currentColor;
-    }
+    body.light .copy-btn { background: rgba(0,0,0,0.12); color: #000; }
+    pre:hover .copy-btn { opacity: 1; }
+    .copy-btn:hover { filter: brightness(1.1); }
+
+    /* Icon glow on hover, consistent with cards */
+    .card-icon i { transition: text-shadow 0.3s ease; }
+    .card-icon i:hover { text-shadow: 0 0 8px currentColor, 0 0 16px currentColor; }
   </style>
 </head>
 <body>
@@ -148,89 +126,100 @@
       </div>
     </section>
 
-    <!-- Instructions -->
+    <!-- Instructions (now card-styled) -->
     <section id="instructions" class="section reveal reveal-right">
       <div class="section-head">
         <h2><i class="fa-solid fa-info-circle icon"></i> Installation Instructions</h2>
       </div>
-      <button class="toggle-btn" id="toggle-instructions-btn" aria-expanded="false">
-        Flashing Instructions
-      </button>
-      <div id="instructions-content" class="instructions-content">
-        <h3># Infinity-X for Redmi Note 12 5G / POCO X5 (stone)</h3>
-        <h3>📲 Installation Instructions</h3>
-        <hr>
-        <h4>⚠️ Before You Begin</h4>
-        <ul>
-          <li>Backup <strong>all important data</strong> to an external source. This process will erase your internal storage.</li>
-          <li>A <strong>clean flash</strong> is mandatory if you're switching from another ROM.</li>
-          <li>You <strong>must be on the latest firmware</strong> available for your device and region. Flash it manually if needed before proceeding.</li>
-          <li><strong>Recommended Recovery:</strong> Use <strong>AOSP recovery</strong>.</li>
-        </ul>
-        <hr>
-        <h4>🧹 Clean Flash (Recommended for First-Time Install)</h4>
-        <ol>
-          <li><strong>Boot into Fastboot mode</strong>
-            <pre><code>adb reboot bootloader</code></pre>
-          </li>
-          <li><strong>Flash the recovery image</strong>
-            <pre><code>fastboot flash boot &lt;recovery_filename&gt;.img</code></pre>
-          </li>
-          <li><strong>Reboot into Recovery</strong>
-            <pre><code>fastboot reboot recovery</code></pre>
-          </li>
-          <li><strong>Format data</strong> - In recovery:<br><code>Factory Reset &gt; Format Data</code></li>
-          <li>Connect the phone to your PC</li>
-          <li><strong>Sideload the ROM</strong> - In recovery:<br>`Apply update > Apply from ADB`<br>On your PC:
-            <pre><code>adb sideload &lt;rom_filename&gt;.zip</code></pre>
-          </li>
-          <li>(Optional) When prompted, choose <strong>Yes</strong> to reboot to recovery again if flashing:
+      <div class="grid">
+        <article class="card">
+          <div class="card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+          <h3>Flashing Instructions</h3>
+          <p>For Redmi Note 12 5G / POCO X5 (stone) — Infinity‑X & LineageOS</p>
+
+          <div class="card-actions">
+            <button class="btn btn-primary" id="toggle-instructions-btn" aria-expanded="false" aria-controls="instructions-content">
+              Show Steps
+            </button>
+            <a class="btn btn-outline" href="#downloads">Get ROMs</a>
+          </div>
+
+          <div id="instructions-content" class="instructions-content">
+            <h4>⚠️ Before You Begin</h4>
             <ul>
-              <li>GApps</li>
-              <li>Magisk</li>
-              <li>Any other .zip</li>
+              <li>Backup <strong>all important data</strong> to an external source. This process will erase your internal storage.</li>
+              <li>A <strong>clean flash</strong> is mandatory if you're switching from another ROM.</li>
+              <li>You <strong>must be on the latest firmware</strong> available for your device and region. Flash it manually if needed before proceeding.</li>
+              <li><strong>Recommended Recovery:</strong> Use <strong>AOSP recovery</strong>.</li>
             </ul>
-          </li>
-          <li>Format data again if you flashed anything in Step 7</li>
-          <li>If not flashing anything else, choose <strong>No</strong> when prompted</li>
-          <li>Reboot to system (first boot may take several minutes)</li>
-        </ol>
-        <hr>
-        <h4>🔄 ROM Update / Dirty Flash (For Updating Same ROM)</h4>
-        <h5>✅ Option 1: OTA Update</h5>
-        <ul>
-          <li>Go to: <code>Settings > System > Updater</code></li>
-          <li>Download and install the new build</li>
-          <li>Click reboot</li>
-          <li>Done!</li>
-        </ul>
-        <h5>✅ Option 2: Local Update (Via Updater App)</h5>
-        <ol>
-          <li>Place the new ROM .zip on your internal storage</li>
-          <li>Open the Updater app</li>
-          <li>Tap the 3-dot menu > <strong>Local Update</strong></li>
-          <li>Select the ROM .zip and confirm</li>
-          <li>Phone will reboot to recovery and apply the update</li>
-          <li>Done!</li>
-        </ol>
-        <h5>✅ Option 3: Manual Dirty Flash (ADB Sideload)</h5>
-        <ol>
-          <li>Boot into Recovery</li>
-          <li>In recovery: <code>Apply update > Apply from ADB</code></li>
-          <li>On PC:
-            <pre><code>adb sideload &lt;rom_filename&gt;.zip</code></pre>
-          </li>
-          <li>(Optional) Reboot back to recovery and sideload:
+
+            <h4>🧹 Clean Flash (Recommended for First‑Time Install)</h4>
+            <ol>
+              <li><strong>Boot into Fastboot mode</strong>
+                <pre><code>adb reboot bootloader</code></pre>
+              </li>
+              <li><strong>Flash the recovery image</strong>
+                <pre><code>fastboot flash boot &lt;recovery_filename&gt;.img</code></pre>
+              </li>
+              <li><strong>Reboot into Recovery</strong>
+                <pre><code>fastboot reboot recovery</code></pre>
+              </li>
+              <li><strong>Format data</strong> — In recovery:<br><code>Factory Reset &gt; Format Data</code></li>
+              <li>Connect the phone to your PC</li>
+              <li><strong>Sideload the ROM</strong> — In recovery: <code>Apply update &gt; Apply from ADB</code><br>On your PC:
+                <pre><code>adb sideload &lt;rom_filename&gt;.zip</code></pre>
+              </li>
+              <li>(Optional) When prompted, choose <strong>Yes</strong> to reboot to recovery again if flashing:
+                <ul>
+                  <li>GApps</li>
+                  <li>Magisk</li>
+                  <li>Any other .zip</li>
+                </ul>
+              </li>
+              <li>Format data again if you flashed anything in Step 7</li>
+              <li>If not flashing anything else, choose <strong>No</strong> when prompted</li>
+              <li>Reboot to system (first boot may take several minutes)</li>
+            </ol>
+
+            <h4>🔄 ROM Update / Dirty Flash (Updating Same ROM)</h4>
+            <h5>✅ Option 1: OTA Update</h5>
             <ul>
-              <li>GApps</li>
-              <li>Magisk</li>
+              <li>Go to: <code>Settings &gt; System &gt; Updater</code></li>
+              <li>Download and install the new build</li>
+              <li>Tap reboot</li>
+              <li>Done!</li>
             </ul>
-          </li>
-          <li>Reboot to system</li>
-        </ol>
-        <hr>
-        <h4>✅ You're Done!</h4>
-        <p>Enjoy your freshly installed or updated ROM.</p>
+
+            <h5>✅ Option 2: Local Update (Via Updater App)</h5>
+            <ol>
+              <li>Place the new ROM .zip on your internal storage</li>
+              <li>Open the Updater app</li>
+              <li>Tap the 3‑dot menu &gt; <strong>Local Update</strong></li>
+              <li>Select the ROM .zip and confirm</li>
+              <li>Phone will reboot to recovery and apply the update</li>
+              <li>Done!</li>
+            </ol>
+
+            <h5>✅ Option 3: Manual Dirty Flash (ADB Sideload)</h5>
+            <ol>
+              <li>Boot into Recovery</li>
+              <li>In recovery: <code>Apply update &gt; Apply from ADB</code></li>
+              <li>On PC:
+                <pre><code>adb sideload &lt;rom_filename&gt;.zip</code></pre>
+              </li>
+              <li>(Optional) Reboot back to recovery and sideload:
+                <ul>
+                  <li>GApps</li>
+                  <li>Magisk</li>
+                </ul>
+              </li>
+              <li>Reboot to system</li>
+            </ol>
+
+            <h4>✅ You're Done!</h4>
+            <p>Enjoy your freshly installed or updated ROM.</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -271,10 +260,15 @@
     document.addEventListener('DOMContentLoaded', () => {
       const toggleBtn = document.getElementById('toggle-instructions-btn');
       const instructions = document.getElementById('instructions-content');
-      toggleBtn.addEventListener('click', () => {
-        const isVisible = instructions.classList.toggle('visible');
-        toggleBtn.setAttribute('aria-expanded', isVisible);
-      });
+      if (toggleBtn && instructions) {
+        toggleBtn.addEventListener('click', () => {
+          const isVisible = instructions.classList.toggle('visible');
+          toggleBtn.setAttribute('aria-expanded', isVisible);
+          toggleBtn.textContent = isVisible ? 'Hide Steps' : 'Show Steps';
+        });
+      }
+
+      // Copy buttons for code blocks
       document.querySelectorAll('#instructions-content pre').forEach(pre => {
         const btn = document.createElement('button');
         btn.className = 'copy-btn';
