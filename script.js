@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
       e.stopPropagation();
       sidebar.classList.toggle('open');
 
-      // Icon switch
       const icon = toggleBtn.querySelector('i');
       if (sidebar.classList.contains('open')) {
         icon.classList.remove('fa-bars');
@@ -20,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close on click outside
     document.addEventListener('click', (e) => {
       if (window.innerWidth <= 960 &&
           sidebar.classList.contains('open') &&
@@ -35,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Auto-Add Copy Buttons to Code Blocks
   document.querySelectorAll('pre').forEach(pre => {
-    // Only add if not already present
     if (pre.querySelector('.copy-btn')) return;
 
     const btn = document.createElement('button');
