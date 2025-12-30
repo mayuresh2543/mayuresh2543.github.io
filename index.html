@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Force enable scrolling for landing page */
+    /* Force enable scrolling for landing page override */
     html { height: auto; }
     body { height: auto !important; overflow-y: auto !important; }
   </style>
@@ -59,11 +59,21 @@
       <h3>Stability</h3>
       <p>Tested daily drivers. Choose between the feature-rich Infinity-X or clean LineageOS.</p>
     </div>
-    <a href="stone.html" style="text-decoration: none;">
-      <div class="vp-card" style="border: 1px solid var(--vp-c-brand);">
-        <div class="card-icon"><i class="fa-solid fa-mobile-screen" style="color: #fff"></i></div>
-        <h3>Redmi Note 12 5G</h3>
-        <p>Click here to view downloads, changelogs, and flashing instructions.</p>
+  </section>
+
+  <section class="home-device-section">
+    <div class="section-title">Supported Devices</div>
+
+    <a href="stone.html" class="device-card-home">
+      <div class="dch-icon">
+        <i class="fa-solid fa-mobile-screen"></i>
+      </div>
+      <div class="dch-content">
+        <h3 class="dch-title">Redmi Note 12 5G</h3>
+        <p class="dch-subtitle">Codename: <strong>stone</strong> / POCO X5</p>
+      </div>
+      <div class="dch-action">
+        View Docs <i class="fa-solid fa-arrow-right"></i>
       </div>
     </a>
   </section>
