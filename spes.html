@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spes (Redmi Note 11) | Docs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="layout-doc">
+
+  <header class="VPNavBar">
+    <div class="VPNavBar-container">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <button class="menu-toggle" id="sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
+        <a href="index.html" class="logo">Mayuresh Docs</a>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="https://t.me/mayuresh2543" target="_blank" class="nav-link">Support</a>
+      </div>
+    </div>
+  </header>
+
+  <aside class="VPSidebar" id="sidebar">
+    <div style="margin-bottom: 24px;">
+      <div class="sidebar-group-title">GENERAL</div>
+      <a href="index.html" class="sidebar-link">Introduction</a>
+    </div>
+    <div style="margin-bottom: 24px;">
+      <div class="sidebar-group-title">DEVICES</div>
+      <a href="stone.html" class="sidebar-link">Redmi Note 12 5G</a>
+      <a href="spes.html" class="sidebar-link active">Redmi Note 11</a>
+    </div>
+    <div>
+      <div class="sidebar-group-title">ON THIS PAGE</div>
+      <a href="#downloads" class="sidebar-link" style="margin-left: 10px;">Downloads</a>
+      <a href="#clean-flash" class="sidebar-link" style="margin-left: 10px;">Clean Flash</a>
+      <a href="#update" class="sidebar-link" style="margin-left: 10px;">Update Guide</a>
+    </div>
+  </aside>
+
+  <main class="VPContent vp-doc">
+    <h1>Redmi Note 11 <span style="font-weight: 400; opacity: 0.5;">(spes/spesn)</span></h1>
+    <p>
+      Unified builds for Redmi Note 11 (NFC/Non-NFC).
+      Maintainer: <strong>Mayuresh</strong>
+    </p>
+
+    <div class="custom-block warning">
+      <p class="custom-block-title">⚠️ Before You Begin</p>
+      <ul>
+        <li><strong>Backup Data:</strong> Save all important data externally. This process erases internal storage.</li>
+        <li><strong>Clean Flash:</strong> Mandatory if switching from another ROM.</li>
+        <li><strong>Firmware:</strong> You must be on the latest firmware for your region.</li>
+        <li><strong>Recovery:</strong> Use <strong>AOSP recovery</strong>.</li>
+      </ul>
+    </div>
+
+    <h2 id="downloads">Downloads</h2>
+
+    <div class="doc-grid">
+      <div class="download-card">
+        <div class="download-header">
+          <div class="download-icon-box" style="background: rgba(189, 52, 254, 0.15); color: #bd34fe;">
+            <i class="fa-solid fa-infinity"></i>
+          </div>
+          <span class="version-tag">Android 16</span>
+        </div>
+        <h3>Infinity-X</h3>
+        <p>A feature-rich experience focused on customization, built on the latest Android base.</p>
+        <div class="download-actions">
+          <a href="https://github.com/mayuresh-releases/Infinity-X_spes" target="_blank" class="action-btn primary">
+            <i class="fa-solid fa-download"></i> Get ROM
+          </a>
+          <a href="https://raw.githubusercontent.com/mayuresh2543/OTA/refs/heads/infinity-16/Changelogs/spes.txt" target="_blank" class="action-btn secondary">
+            Changelog
+          </a>
+        </div>
+      </div>
+
+      <div class="download-card">
+        <div class="download-header">
+          <div class="download-icon-box" style="background: rgba(88, 166, 255, 0.15); color: #58a6ff;">
+            <i class="fa-brands fa-android"></i>
+          </div>
+          <span class="version-tag">Android 15</span>
+        </div>
+        <h3>LineageOS</h3>
+        <p>The classic, lightweight Android experience. Clean, stable, and battery-friendly.</p>
+        <div class="download-actions">
+          <a href="https://github.com/mayuresh-releases/LineageOS_spes" target="_blank" class="action-btn primary">
+            <i class="fa-solid fa-download"></i> Get ROM
+          </a>
+          <a href="https://raw.githubusercontent.com/Mayuresh2543/OTA/refs/heads/lineage-22.2/Changelogs/spes.txt" target="_blank" class="action-btn secondary">
+            Changelog
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <h2 id="clean-flash">Clean Flash (First Time Install)</h2>
+    <p>Follow these steps carefully if you are coming from MIUI or another custom ROM.</p>
+
+    <div class="steps-container">
+
+      <div class="step-item">
+        <div class="step-number">1</div>
+        <div class="step-title">Enter Fastboot Mode</div>
+        <p>Power off your device. Use the hardware button combo or run:</p>
+        <pre><code>adb reboot bootloader</code></pre>
+      </div>
+
+      <div class="step-item">
+        <div class="step-number">2</div>
+        <div class="step-title">Flash Recovery</div>
+        <p>Flash the AOSP recovery image to the boot partition.</p>
+        <pre><code>fastboot flash boot recovery_filename.img</code></pre>
+      </div>
+
+      <div class="step-item">
+        <div class="step-number">3</div>
+        <div class="step-title">Reboot to Recovery</div>
+        <p>Immediately reboot into the new recovery mode.</p>
+        <pre><code>fastboot reboot recovery</code></pre>
+      </div>
+
+      <div class="step-item">
+        <div class="step-number">4</div>
+        <div class="step-title">Format Data</div>
+        <p>This will wipe your internal storage.</p>
+        <ol>
+          <li>On the recovery screen, select <strong>Factory Reset</strong>.</li>
+          <li>Select <strong>Format Data / Factory Reset</strong>.</li>
+        </ol>
+      </div>
+
+      <div class="step-item">
+        <div class="step-number">5</div>
+        <div class="step-title">Sideload ROM</div>
+        <p>Connect phone to PC. On the phone, select <strong>Apply Update &gt; Apply from ADB</strong>. On PC run:</p>
+        <pre><code>adb sideload rom_filename.zip</code></pre>
+      </div>
+
+      <div class="step-item">
+        <div class="step-number">6</div>
+        <div class="step-title">Addons (Optional)</div>
+        <p>If you want to flash GApps or Magisk:</p>
+        <ol>
+          <li>When prompted after sideloading, select <strong>Yes</strong> to reboot to recovery.</li>
+          <li>Sideload your GApps/Magisk zip file.</li>
+          <li><strong>Format Data again</strong> after flashing these addons.</li>
+        </ol>
+        <p><em>If you are not flashing addons, select <strong>No</strong> when prompted.</em></p>
+      </div>
+
+      <div class="step-item">
+        <div class="step-number">7</div>
+        <div class="step-title">Reboot</div>
+        <p>Select <strong>Reboot system now</strong>. The first boot may take several minutes.</p>
+      </div>
+
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid var(--vp-c-border); margin: 48px 0;">
+
+    <h2 id="update">Update Guide</h2>
+
+    <h3>Option 1: OTA Update (Automatic)</h3>
+    <p>Go to <strong>Settings &gt; System &gt; Updater</strong>. Download, install, and click reboot.</p>
+
+    <h3>Option 2: Local Update (Via Updater App)</h3>
+    <ol>
+        <li>Place the new ROM <code>.zip</code> on internal storage.</li>
+        <li>Open the <strong>Updater app</strong>.</li>
+        <li>Tap the 3-dot menu and select <strong>Local Update</strong>.</li>
+        <li>Select the ROM file. The phone will reboot to recovery and install automatically.</li>
+    </ol>
+
+    <h3>Option 3: Manual Dirty Flash (ADB Sideload)</h3>
+    <p>If you prefer using ADB or need to re-flash addons:</p>
+    <ol>
+        <li>Boot into Recovery and select <strong>Apply Update &gt; Apply from ADB</strong>.</li>
+        <li>On PC run: <code>adb sideload new_rom_filename.zip</code></li>
+        <li>(Optional) Reboot to recovery and sideload GApps/Magisk if needed.</li>
+        <li>Reboot to system.</li>
+    </ol>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

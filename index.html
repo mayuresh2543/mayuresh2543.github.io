@@ -3,85 +3,88 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mayuresh Wiki</title>
+  <title>Mayuresh Docs</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Force enable scrolling for landing page override */
-    html { height: auto; }
-    body { height: auto !important; overflow-y: auto !important; }
-  </style>
 </head>
-<body class="layout-home">
+<body class="layout-doc">
 
   <header class="VPNavBar">
     <div class="VPNavBar-container">
-      <a href="index.html" class="logo">
-        <i class="fa-solid fa-rocket"></i> Mayuresh
-      </a>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <button class="menu-toggle" id="sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
+        <a href="index.html" class="logo">Mayuresh Docs</a>
+      </div>
       <div class="nav-links">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="stone.html" class="nav-link">Downloads</a>
-        <a href="https://github.com/mayuresh2543" target="_blank" class="nav-link"><i class="fa-brands fa-github"></i></a>
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="https://t.me/mayuresh2543" target="_blank" class="nav-link">Support</a>
       </div>
     </div>
   </header>
 
-  <div class="vp-hero-bg"></div>
-  <section class="vp-hero-content">
-    <h1 class="hero-title">Custom Android</h1>
-    <h1 class="hero-tagline">Reimagined.</h1>
-    <p class="hero-desc">
-      High-performance builds for Redmi Note 12 5G (stone).
-      Engineered for stability, security, and speed.
+  <aside class="VPSidebar" id="sidebar">
+    <div style="margin-bottom: 24px;">
+      <div class="sidebar-group-title">GENERAL</div>
+      <a href="index.html" class="sidebar-link active">Introduction</a>
+    </div>
+    <div style="margin-bottom: 24px;">
+      <div class="sidebar-group-title">DEVICES</div>
+      <a href="stone.html" class="sidebar-link">Redmi Note 12 5G</a>
+      <a href="spes.html" class="sidebar-link">Redmi Note 11</a>
+    </div>
+  </aside>
+
+  <main class="VPContent vp-doc">
+    <h1>Introduction</h1>
+    <p>
+      Welcome to the official documentation for my custom ROM projects. Select your device from the sidebar or the list below to find download links, changelogs, and installation guides.
     </p>
 
-    <div class="hero-actions">
-      <a href="stone.html" class="vp-btn brand">Get Started</a>
-      <a href="https://github.com/mayuresh2543" class="vp-btn alt">GitHub</a>
+    <div class="custom-block tip">
+      <p class="custom-block-title">Support</p>
+      <p>
+        For bug reports and support, please join the Telegram group linked in the navbar.
+      </p>
     </div>
-  </section>
 
-  <section class="vp-features">
-    <div class="vp-card">
-      <div class="card-icon"><i class="fa-solid fa-bolt" style="color: #41d1ff"></i></div>
-      <h3>Performance</h3>
-      <p>Optimized schedulers and kernel tweaks ensure your device runs smoother than stock MIUI.</p>
-    </div>
-    <div class="vp-card">
-      <div class="card-icon"><i class="fa-solid fa-shield-halved" style="color: #bd34fe"></i></div>
-      <h3>Security</h3>
-      <p>Monthly security patches are merged immediately to keep your device safe.</p>
-    </div>
-    <div class="vp-card">
-      <div class="card-icon"><i class="fa-brands fa-android" style="color: #58a6ff"></i></div>
-      <h3>Stability</h3>
-      <p>Tested daily drivers. Choose between the feature-rich Infinity-X or clean LineageOS.</p>
-    </div>
-  </section>
+    <h2 id="devices">Supported Devices</h2>
 
-  <section class="home-device-section">
-    <div class="section-title">Supported Devices</div>
-
-    <a href="stone.html" class="device-card-home">
-      <div class="dch-icon">
-        <i class="fa-solid fa-mobile-screen"></i>
+    <div class="doc-grid">
+      <div class="download-card">
+        <div class="download-header">
+          <div class="download-icon-box" style="background: rgba(255, 255, 255, 0.1); color: #fff;">
+            <i class="fa-solid fa-mobile-screen"></i>
+          </div>
+          <span class="version-tag">stone</span>
+        </div>
+        <h3>Redmi Note 12 5G</h3>
+        <p>Unified builds for Redmi Note 12 5G and POCO X5.</p>
+        <div class="download-actions">
+          <a href="stone.html" class="action-btn primary">
+            View Docs
+          </a>
+        </div>
       </div>
-      <div class="dch-content">
-        <h3 class="dch-title">Redmi Note 12 5G</h3>
-        <p class="dch-subtitle">Codename: <strong>stone</strong> / POCO X5</p>
-      </div>
-      <div class="dch-action">
-        View Docs <i class="fa-solid fa-arrow-right"></i>
-      </div>
-    </a>
-  </section>
 
-  <footer style="text-align: center; padding: 40px; border-top: 1px solid var(--vp-c-border); color: var(--vp-c-text-2); font-size: 14px;">
-    <p>Released under the MIT License.</p>
-    <p>Copyright © <span id="year"></span> Mayuresh Builds</p>
-  </footer>
+      <div class="download-card">
+        <div class="download-header">
+          <div class="download-icon-box" style="background: rgba(255, 255, 255, 0.1); color: #fff;">
+            <i class="fa-solid fa-mobile-screen"></i>
+          </div>
+          <span class="version-tag">spes</span>
+        </div>
+        <h3>Redmi Note 11</h3>
+        <p>Unified builds for Redmi Note 11 (NFC/Non-NFC).</p>
+        <div class="download-actions">
+          <a href="spes.html" class="action-btn primary">
+            View Docs
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
 
   <script src="script.js"></script>
 </body>
