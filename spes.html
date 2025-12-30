@@ -52,9 +52,9 @@
       <p class="custom-block-title">⚠️ Before You Begin</p>
       <ul>
         <li><strong>Backup Data:</strong> Save all important data externally. This process erases internal storage.</li>
-        <li><strong>Clean Flash:</strong> Mandatory if switching from another ROM.</li>
+        <li><strong>Drivers:</strong> Ensure Fastboot drivers and <a href="https://developer.android.com/tools/releases/platform-tools" target="_blank" style="color: var(--vp-c-brand);">Platform Tools</a> are installed.</li>
         <li><strong>Firmware:</strong> You must be on the latest firmware for your region.</li>
-        <li><strong>Recovery:</strong> Use <strong>AOSP recovery</strong>.</li>
+        <li><strong>USB Debugging:</strong> Enable USB Debugging in Developer Options.</li>
       </ul>
     </div>
 
@@ -82,64 +82,63 @@
     </div>
 
     <h2 id="clean-flash">Clean Flash (First Time Install)</h2>
-    <p>Follow these steps carefully if you are coming from MIUI or another custom ROM.</p>
 
     <div class="steps-container">
 
       <div class="step-item">
         <div class="step-number">1</div>
-        <div class="step-title">Enter Fastboot Mode</div>
-        <p>Power off your device. Use the hardware button combo or run:</p>
-        <pre><code>adb reboot bootloader</code></pre>
+        <div class="step-title">Connect & Verify</div>
+        <p>Connect your device to the PC and verify the connection:</p>
+        <pre><code>adb devices</code></pre>
+        <p>It should show your device ID/serial number.</p>
       </div>
 
       <div class="step-item">
         <div class="step-number">2</div>
-        <div class="step-title">Flash Recovery</div>
-        <p>Flash the AOSP recovery image to the boot partition.</p>
-        <pre><code>fastboot flash boot recovery_filename.img</code></pre>
+        <div class="step-title">Enter Bootloader</div>
+        <p>Reboot your device into Fastboot mode:</p>
+        <pre><code>adb reboot bootloader</code></pre>
       </div>
 
       <div class="step-item">
         <div class="step-number">3</div>
-        <div class="step-title">Reboot to Recovery</div>
-        <p>Immediately reboot into the new recovery mode.</p>
-        <pre><code>fastboot reboot recovery</code></pre>
+        <div class="step-title">Boot Recovery</div>
+        <p>Boot into recovery image (do not flash):</p>
+        <pre><code>fastboot boot recovery.img</code></pre>
+        <p>Your device should now boot into recovery mode automatically.</p>
       </div>
 
       <div class="step-item">
         <div class="step-number">4</div>
-        <div class="step-title">Format Data</div>
-        <p>This will wipe your internal storage.</p>
+        <div class="step-title">Install ROM</div>
+        <p>Transfer the ROM zip to your device storage if you haven't already.</p>
         <ol>
-          <li>On the recovery screen, select <strong>Factory Reset</strong>.</li>
-          <li>Select <strong>Format Data / Factory Reset</strong>.</li>
+          <li>Tap on <strong>Install</strong>.</li>
+          <li>Navigate to the folder where you saved the zip.</li>
+          <li>Select the ROM file.</li>
+          <li><strong>Swipe to flash</strong>.</li>
         </ol>
       </div>
 
       <div class="step-item">
         <div class="step-number">5</div>
-        <div class="step-title">Sideload ROM</div>
-        <p>Connect phone to PC. On the phone, select <strong>Apply Update &gt; Apply from ADB</strong>. On PC run:</p>
-        <pre><code>adb sideload rom_filename.zip</code></pre>
+        <div class="step-title">GApps (Vanilla Only)</div>
+        <p><em>Skip this step if your ROM includes GApps.</em></p>
+        <ol>
+          <li>After flashing ROM, go back and <strong>Format Data</strong>.</li>
+          <li>Reboot to <strong>Recovery</strong> again.</li>
+          <li>Flash your GApps zip.</li>
+        </ol>
       </div>
 
       <div class="step-item">
         <div class="step-number">6</div>
-        <div class="step-title">Addons (Optional)</div>
-        <p>If you want to flash GApps or Magisk:</p>
+        <div class="step-title">Format & Reboot</div>
         <ol>
-          <li>When prompted after sideloading, select <strong>Yes</strong> to reboot to recovery.</li>
-          <li>Sideload your GApps/Magisk zip file.</li>
-          <li><strong>Format Data again</strong> after flashing these addons.</li>
+            <li>Go to <strong>Wipe / Factory Reset</strong> and select <strong>Format Data</strong>.</li>
+            <li>If it fails: Go to <em>Home > Advanced > Reboot to Recovery</em>, then try formatting again.</li>
+            <li><strong>Reboot System</strong>.</li>
         </ol>
-        <p><em>If you are not flashing addons, select <strong>No</strong> when prompted.</em></p>
-      </div>
-
-      <div class="step-item">
-        <div class="step-number">7</div>
-        <div class="step-title">Reboot</div>
-        <p>Select <strong>Reboot system now</strong>. The first boot may take several minutes.</p>
       </div>
 
     </div>
@@ -148,25 +147,15 @@
 
     <h2 id="update">Update Guide</h2>
 
-    <h3>Option 1: OTA Update (Automatic)</h3>
-    <p>Go to <strong>Settings &gt; System &gt; Updater</strong>. Download, install, and click reboot.</p>
-
-    <h3>Option 2: Local Update (Via Updater App)</h3>
+    <h3>Option 1: Dirty Flash (Keep Data)</h3>
     <ol>
-        <li>Place the new ROM <code>.zip</code> on internal storage.</li>
-        <li>Open the <strong>Updater app</strong>.</li>
-        <li>Tap the 3-dot menu and select <strong>Local Update</strong>.</li>
-        <li>Select the ROM file. The phone will reboot to recovery and install automatically.</li>
+        <li>Boot into Recovery.</li>
+        <li>Tap <strong>Install</strong> and select the new ROM zip.</li>
+        <li><strong>Swipe to flash</strong>.</li>
+        <li>Wipe Cache/Dalvik (Optional).</li>
+        <li><strong>Reboot System</strong>.</li>
     </ol>
-
-    <h3>Option 3: Manual Dirty Flash (ADB Sideload)</h3>
-    <p>If you prefer using ADB or need to re-flash addons:</p>
-    <ol>
-        <li>Boot into Recovery and select <strong>Apply Update &gt; Apply from ADB</strong>.</li>
-        <li>On PC run: <code>adb sideload new_rom_filename.zip</code></li>
-        <li>(Optional) Reboot to recovery and sideload GApps/Magisk if needed.</li>
-        <li>Reboot to system.</li>
-    </ol>
+    <p><em>Do not format data for a dirty flash.</em></p>
 
   </main>
 
