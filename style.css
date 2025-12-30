@@ -128,7 +128,7 @@ a:hover { color: var(--vp-c-brand); }
 .vp-btn.alt { background: var(--vp-c-bg-soft); color: var(--vp-c-text-1); }
 .vp-btn.alt:hover { background: #2f2f35; }
 
-/* Feature Grid */
+/* Feature Grid (Landing Page) */
 .vp-features {
   max-width: 1152px; margin: 0 auto 64px; padding: 0 24px;
   display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;
@@ -180,7 +180,8 @@ a:hover { color: var(--vp-c-brand); }
 .vp-doc h1 { font-size: 32px; font-weight: 800; margin-bottom: 40px; line-height: 1.2; }
 .vp-doc h2 { font-size: 24px; font-weight: 600; margin: 48px 0 16px; border-top: 1px solid var(--vp-c-border); padding-top: 24px; }
 .vp-doc h3 { font-size: 20px; font-weight: 600; margin: 32px 0 16px; }
-.vp-doc p, .vp-doc ul { font-size: 16px; color: var(--vp-c-text-2); margin-bottom: 16px; }
+.vp-doc p, .vp-doc ul, .vp-doc ol { font-size: 16px; color: var(--vp-c-text-2); margin-bottom: 16px; line-height: 1.7; }
+.vp-doc li { margin-bottom: 8px; }
 .vp-doc code { font-size: 0.9em; color: var(--vp-c-text-2); background: var(--vp-c-bg-soft); padding: 3px 6px; border-radius: 4px; font-family: monospace; }
 
 /* Admonitions (Tip/Warning/Info) */
@@ -208,12 +209,119 @@ a:hover { color: var(--vp-c-brand); }
 }
 .vp-doc pre:hover .copy-btn { opacity: 1; }
 
+/* ========================================================================
+   REFINED Download Cards (VitePress Style)
+   ======================================================================== */
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px; /* Matches landing page gap */
+  margin: 32px 0;
+}
+
+.download-card {
+  background-color: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-border);
+  border-radius: 12px;
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s, transform 0.2s;
+}
+
+.download-card:hover {
+  border-color: var(--vp-c-brand);
+  transform: translateY(-2px);
+}
+
+/* Header: Icon on left, Version on right */
+.download-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.download-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.version-tag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--vp-c-text-2);
+}
+
+.download-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 8px 0 !important;
+  color: var(--vp-c-text-1);
+}
+
+.download-card p {
+  font-size: 15px;
+  color: var(--vp-c-text-2);
+  margin-bottom: 24px !important;
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+/* Action Buttons - Pill Shaped */
+.download-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 0;
+  border-radius: 30px; /* Pill shape */
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.action-btn.primary {
+  background-color: var(--vp-c-brand);
+  color: #fff;
+}
+.action-btn.primary:hover {
+  background-color: var(--vp-c-brand-light);
+  color: #fff;
+}
+
+.action-btn.secondary {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--vp-c-text-1);
+}
+.action-btn.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
 /* Responsive Mobile */
 @media (max-width: 960px) {
   .VPContent { margin-left: 0; padding: 32px 24px; }
   .VPSidebar { transform: translateX(-100%); }
   .VPSidebar.open { transform: translateX(0); }
   .menu-toggle { display: block; }
-  .nav-links { display: none; } /* Simplify for mobile */
+  .nav-links { display: none; }
   .hero-title, .hero-tagline { font-size: 36px; }
 }

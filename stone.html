@@ -52,33 +52,52 @@
     <div class="custom-block warning">
       <p class="custom-block-title">Important Prerequisites</p>
       <ul>
-        <li><strong>Backup Data:</strong> This process requires formatting data, which wipes internal storage.</li>
+        <li><strong>Backup Data:</strong> This process requires formatting data.</li>
         <li><strong>Firmware:</strong> You must be on the latest firmware for your region.</li>
-        <li><strong>Recovery:</strong> AOSP Recovery is recommended.</li>
       </ul>
     </div>
 
     <h2 id="downloads">Downloads</h2>
-    <div class="vp-features" style="padding: 0; margin: 0; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
 
-      <div class="vp-card" style="border: 1px solid var(--vp-c-border);">
-        <div class="card-icon"><i class="fa-solid fa-infinity" style="color: #bd34fe"></i></div>
-        <h3>Infinity-X (Android 16)</h3>
-        <p style="margin-bottom: 16px;">Customization focused with latest features.</p>
-        <a href="https://github.com/mayuresh-releases/Infinity-X_stone" target="_blank" class="vp-btn brand" style="font-size: 14px; line-height: 32px; padding: 0 16px;">Download</a>
-        <a href="https://raw.githubusercontent.com/mayuresh2543/OTA/refs/heads/infinity-16/Changelogs/stone.txt" target="_blank" class="vp-btn alt" style="font-size: 14px; line-height: 32px; padding: 0 16px;">Changelog</a>
+    <div class="doc-grid">
+      <div class="download-card">
+        <div class="download-header">
+          <div class="download-icon-box" style="background: rgba(189, 52, 254, 0.15); color: #bd34fe;">
+            <i class="fa-solid fa-infinity"></i>
+          </div>
+          <span class="version-tag">Android 16</span>
+        </div>
+        <h3>Infinity-X</h3>
+        <p>A feature-rich experience focused on customization, built on the latest Android base.</p>
+        <div class="download-actions">
+          <a href="https://github.com/mayuresh-releases/Infinity-X_stone" target="_blank" class="action-btn primary">
+            <i class="fa-solid fa-download"></i> Get ROM
+          </a>
+          <a href="https://raw.githubusercontent.com/mayuresh2543/OTA/refs/heads/infinity-16/Changelogs/stone.txt" target="_blank" class="action-btn secondary">
+            Changelog
+          </a>
+        </div>
       </div>
 
-      <div class="vp-card" style="border: 1px solid var(--vp-c-border);">
-        <div class="card-icon"><i class="fa-brands fa-android" style="color: #58a6ff"></i></div>
-        <h3>LineageOS (Android 15)</h3>
-        <p style="margin-bottom: 16px;">Clean, minimal, and rock stable.</p>
-        <a href="https://github.com/mayuresh-releases/LineageOS_stone" target="_blank" class="vp-btn brand" style="font-size: 14px; line-height: 32px; padding: 0 16px;">Download</a>
-        <a href="https://raw.githubusercontent.com/Mayuresh2543/OTA/refs/heads/lineage-22.2/Changelogs/stone.txt" target="_blank" class="vp-btn alt" style="font-size: 14px; line-height: 32px; padding: 0 16px;">Changelog</a>
+      <div class="download-card">
+        <div class="download-header">
+          <div class="download-icon-box" style="background: rgba(88, 166, 255, 0.15); color: #58a6ff;">
+            <i class="fa-brands fa-android"></i>
+          </div>
+          <span class="version-tag">Android 15</span>
+        </div>
+        <h3>LineageOS</h3>
+        <p>The classic, lightweight Android experience. Clean, stable, and battery-friendly.</p>
+        <div class="download-actions">
+          <a href="https://github.com/mayuresh-releases/LineageOS_stone" target="_blank" class="action-btn primary">
+            <i class="fa-solid fa-download"></i> Get ROM
+          </a>
+          <a href="https://raw.githubusercontent.com/Mayuresh2543/OTA/refs/heads/lineage-22.2/Changelogs/stone.txt" target="_blank" class="action-btn secondary">
+            Changelog
+          </a>
+        </div>
       </div>
-
     </div>
-
     <h2 id="clean-flash">Clean Flash (First Time)</h2>
     <p>Follow these steps if you are coming from stock MIUI or a different custom ROM.</p>
 
@@ -86,7 +105,7 @@
     <pre><code>adb reboot bootloader</code></pre>
 
     <h3>2. Flash Recovery</h3>
-    <p>Flash the recommended recovery image (boot.img or recovery.img depending on the package):</p>
+    <p>Flash the recommended recovery image:</p>
     <pre><code>fastboot flash boot &lt;recovery_filename&gt;.img</code></pre>
 
     <h3>3. Reboot to Recovery</h3>
@@ -108,40 +127,22 @@
     <pre><code>adb sideload &lt;rom_filename&gt;.zip</code></pre>
 
     <h3>6. Finalize</h3>
-    <ul>
-      <li>If you want to flash GApps or Magisk: Go to <strong>Advanced</strong> &gt; <strong>Reboot to Recovery</strong> and sideload them now.</li>
-      <li>Otherwise, go back to main menu and tap <strong>Reboot system now</strong>.</li>
-    </ul>
+    <p>Go back to main menu and tap <strong>Reboot system now</strong>.</p>
 
     <hr style="border: 0; border-top: 1px solid var(--vp-c-border); margin: 48px 0;">
 
-    <h2 id="update">Update / Dirty Flash</h2>
-    <p>Use any of these methods to update your current ROM to a newer version.</p>
+    <h2 id="update">Update Guide</h2>
+    <p>Use any of these methods to update your current ROM.</p>
 
     <h3>Method 1: OTA Update (Recommended)</h3>
     <ol>
       <li>Go to <strong>Settings</strong> &gt; <strong>System</strong> &gt; <strong>Updater</strong>.</li>
       <li>Download and install the update.</li>
-      <li>The device will reboot automatically.</li>
     </ol>
 
-    <h3>Method 2: Local Update (Via App)</h3>
-    <ol>
-      <li>Download the ROM zip and place it in internal storage.</li>
-      <li>Open the <strong>Updater</strong> app.</li>
-      <li>Tap the menu (3 dots) &gt; <strong>Local Update</strong>.</li>
-      <li>Select the zip file. The phone will reboot to recovery and install it.</li>
-    </ol>
-
-    <h3>Method 3: Manual Sideload</h3>
-    <p>If you prefer using a PC or if OTA fails:</p>
-    <ol>
-      <li>Reboot to Recovery.</li>
-      <li>Select <strong>Apply Update</strong> &gt; <strong>Apply from ADB</strong>.</li>
-      <li>On PC: <pre><code>adb sideload &lt;rom_filename&gt;.zip</code></pre></li>
-      <li>(Optional) Reboot to recovery and re-flash Magisk/GApps if needed.</li>
-      <li>Reboot System.</li>
-    </ol>
+    <h3>Method 2: Manual Sideload</h3>
+    <p>If OTA fails, you can dirty flash via ADB:</p>
+    <pre><code>adb sideload &lt;rom_filename&gt;.zip</code></pre>
 
   </main>
 
