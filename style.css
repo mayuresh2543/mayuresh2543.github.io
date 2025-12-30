@@ -1,5 +1,5 @@
 /* ========================================================================
-   VitePress / Vixano Theme Clone (Complete)
+   VitePress / Vixano Theme Clone (Final Complete Version)
    ======================================================================== */
 :root {
   /* -- COLORS -- */
@@ -239,6 +239,20 @@ a:hover { color: var(--vp-c-brand); }
 .action-btn.primary:hover { background-color: var(--vp-c-brand-light); }
 .action-btn.secondary { background-color: rgba(255, 255, 255, 0.08); color: var(--vp-c-text-1); }
 .action-btn.secondary:hover { background-color: rgba(255, 255, 255, 0.12); color: #fff; }
+
+/* =========================
+   Step-by-Step Instructions
+   ========================= */
+.steps-container { margin-top: 32px; border-left: 1px solid var(--vp-c-border); padding-left: 24px; margin-left: 16px; }
+.step-item { position: relative; margin-bottom: 48px; }
+.step-number {
+  position: absolute; left: -41px; top: 0; width: 34px; height: 34px;
+  background-color: var(--vp-c-bg); border: 1px solid var(--vp-c-border);
+  border-radius: 50%; color: var(--vp-c-brand); display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 14px; z-index: 2;
+}
+.step-title { font-size: 18px; font-weight: 600; margin-bottom: 12px; color: var(--vp-c-text-1); margin-top: 4px; }
+.step-item:hover .step-number { border-color: var(--vp-c-brand); box-shadow: 0 0 0 4px rgba(88, 166, 255, 0.1); }
 
 /* Mobile Responsive */
 @media (max-width: 960px) {
