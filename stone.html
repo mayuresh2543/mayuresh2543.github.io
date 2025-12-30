@@ -2,293 +2,149 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mayuresh — Stone ROM Downloads & Instructions</title>
-
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
-
-  <!-- Styles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stone (Redmi Note 12 5G) | Docs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css">
-
-  <meta name="description" content="Stable and custom Android ROM downloads for Stone — Infinity-X and LineageOS builds.">
-
-  <style>
-    /* Use existing site button styles instead of a custom one */
-    .toggle-btn { display: none; }
-
-    /* Make the instructions live inside the card visually */
-    .instructions-content {
-      display: none;
-      margin-top: 1rem;
-      line-height: 1.6;
-      background: transparent;   /* card already has its own bg */
-      padding: 0;                /* rely on card padding */
-      border-radius: 0;
-      box-shadow: none;
-      max-width: 100%;
-      overflow-wrap: break-word;
-    }
-    .instructions-content.visible { display: block; }
-
-    .instructions-content h4,
-    .instructions-content h5 {
-      margin: 1rem 0 .5rem;
-    }
-
-    .instructions-content pre {
-      position: relative;
-      background: rgba(255,255,255,0.05);
-      padding: 0.75rem 2.5rem 0.75rem 0.75rem;
-      border-radius: 8px;
-      overflow-x: auto;
-    }
-    body.light .instructions-content pre { background: rgba(0,0,0,0.06); }
-
-    .instructions-content code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: .95em; }
-
-    /* Copy button for code blocks */
-    .copy-btn {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      background: rgba(0,0,0,0.4);
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      padding: 6px 8px;
-      cursor: pointer;
-      font-size: 0.75rem;
-      opacity: 0;
-      transition: opacity 0.2s ease, background 0.2s ease;
-    }
-    body.light .copy-btn { background: rgba(0,0,0,0.12); color: #000; }
-    pre:hover .copy-btn { opacity: 1; }
-    .copy-btn:hover { filter: brightness(1.1); }
-
-    /* Icon glow on hover, consistent with cards */
-    .card-icon i { transition: text-shadow 0.3s ease; }
-    .card-icon i:hover { text-shadow: 0 0 8px currentColor, 0 0 16px currentColor; }
-  </style>
 </head>
-<body>
-  <!-- Topbar -->
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="brand">
-        <a href="index.html" class="logo">
-          <span class="logo-mark">🚀</span>
-          <span class="logo-text">Mayuresh</span>
-        </a>
+<body class="layout-doc">
+
+  <header class="VPNavBar">
+    <div class="VPNavBar-container">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <button class="menu-toggle" id="sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
+        <a href="index.html" class="logo">Mayuresh Docs</a>
       </div>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="hamburger"></span>
-      </button>
-      <nav class="nav">
+      <div class="nav-links">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="#downloads" class="nav-link">Downloads</a>
-        <a href="#instructions" class="nav-link">Instructions</a>
-        <a href="#contact" class="nav-link">Contact</a>
-        <button id="theme-toggle" class="btn-ghost" aria-pressed="false" title="Toggle light/dark">
-          <i class="fa-regular fa-moon"></i>
-        </button>
-      </nav>
+        <a href="https://t.me/mayuresh2543" target="_blank" class="nav-link">Support</a>
+      </div>
     </div>
-  </div>
+  </header>
 
-  <!-- MAIN -->
-  <main class="container main">
-    <section id="downloads" class="section reveal reveal-left">
-      <div class="section-head">
-        <h2><i class="fa-solid fa-download icon"></i> Downloads</h2>
-        <p>Stable builds for Redmi Note 12 5G / POCO X5</p>
+  <aside class="VPSidebar" id="sidebar">
+    <div style="margin-bottom: 24px;">
+      <div class="sidebar-group-title">GENERAL</div>
+      <a href="index.html" class="sidebar-link">Introduction</a>
+    </div>
+
+    <div style="margin-bottom: 24px;">
+      <div class="sidebar-group-title">DEVICES</div>
+      <a href="stone.html" class="sidebar-link active">Redmi Note 12 5G</a>
+    </div>
+
+    <div>
+      <div class="sidebar-group-title">ON THIS PAGE</div>
+      <a href="#downloads" class="sidebar-link" style="margin-left: 10px;">Downloads</a>
+      <a href="#clean-flash" class="sidebar-link" style="margin-left: 10px;">Clean Flash</a>
+      <a href="#update" class="sidebar-link" style="margin-left: 10px;">Update Guide</a>
+    </div>
+  </aside>
+
+  <main class="VPContent vp-doc">
+    <h1>Redmi Note 12 5G <span style="font-weight: 400; opacity: 0.5;">(stone)</span></h1>
+    <p>
+      Unified builds for Redmi Note 12 5G and POCO X5.
+      Maintainer: <strong>Mayuresh</strong>
+    </p>
+
+    <div class="custom-block warning">
+      <p class="custom-block-title">Important Prerequisites</p>
+      <ul>
+        <li><strong>Backup Data:</strong> This process requires formatting data, which wipes internal storage.</li>
+        <li><strong>Firmware:</strong> You must be on the latest firmware for your region.</li>
+        <li><strong>Recovery:</strong> AOSP Recovery is recommended.</li>
+      </ul>
+    </div>
+
+    <h2 id="downloads">Downloads</h2>
+    <div class="vp-features" style="padding: 0; margin: 0; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+
+      <div class="vp-card" style="border: 1px solid var(--vp-c-border);">
+        <div class="card-icon"><i class="fa-solid fa-infinity" style="color: #bd34fe"></i></div>
+        <h3>Infinity-X (Android 16)</h3>
+        <p style="margin-bottom: 16px;">Customization focused with latest features.</p>
+        <a href="https://github.com/mayuresh-releases/Infinity-X_stone" target="_blank" class="vp-btn brand" style="font-size: 14px; line-height: 32px; padding: 0 16px;">Download</a>
+        <a href="https://raw.githubusercontent.com/mayuresh2543/OTA/refs/heads/infinity-16/Changelogs/stone.txt" target="_blank" class="vp-btn alt" style="font-size: 14px; line-height: 32px; padding: 0 16px;">Changelog</a>
       </div>
-      <div class="grid">
-        <article class="card reveal reveal-left">
-          <div class="card-icon"><i class="fa-solid fa-infinity"></i></div>
-          <h3>Infinity-X (Android 16)</h3>
-          <p>Latest stable Android experience and extended customization.</p>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://github.com/mayuresh-releases/Infinity-X_stone" target="_blank">Download</a>
-            <a class="btn btn-outline" href="https://raw.githubusercontent.com/mayuresh2543/OTA/refs/heads/infinity-16/Changelogs/stone.txt" target="_blank">Changelog</a>
-          </div>
-        </article>
-        <article class="card reveal reveal-right">
-          <div class="card-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
-          <h3>LineageOS (Android 15)</h3>
-          <p>Clean and stable Android experience with Minimal Customizations.</p>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://github.com/mayuresh-releases/LineageOS_stone" target="_blank">Download</a>
-            <a class="btn btn-outline" href="https://raw.githubusercontent.com/Mayuresh2543/OTA/refs/heads/lineage-22.2/Changelogs/stone.txt" target="_blank">Changelog</a>
-          </div>
-        </article>
+
+      <div class="vp-card" style="border: 1px solid var(--vp-c-border);">
+        <div class="card-icon"><i class="fa-brands fa-android" style="color: #58a6ff"></i></div>
+        <h3>LineageOS (Android 15)</h3>
+        <p style="margin-bottom: 16px;">Clean, minimal, and rock stable.</p>
+        <a href="https://github.com/mayuresh-releases/LineageOS_stone" target="_blank" class="vp-btn brand" style="font-size: 14px; line-height: 32px; padding: 0 16px;">Download</a>
+        <a href="https://raw.githubusercontent.com/Mayuresh2543/OTA/refs/heads/lineage-22.2/Changelogs/stone.txt" target="_blank" class="vp-btn alt" style="font-size: 14px; line-height: 32px; padding: 0 16px;">Changelog</a>
       </div>
-    </section>
 
-    <!-- Instructions (now card-styled) -->
-    <section id="instructions" class="section reveal reveal-right">
-      <div class="section-head">
-        <h2><i class="fa-solid fa-info-circle icon"></i> Installation Instructions</h2>
-      </div>
-      <div class="grid">
-        <article class="card">
-          <div class="card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-          <h3>Flashing Instructions</h3>
-          <p>For Redmi Note 12 5G / POCO X5 (stone) — Infinity‑X & LineageOS</p>
+    </div>
 
-          <div class="card-actions">
-            <button class="btn btn-primary" id="toggle-instructions-btn" aria-expanded="false" aria-controls="instructions-content">
-              Show Steps
-            </button>
-            <a class="btn btn-outline" href="#downloads">Get ROMs</a>
-          </div>
+    <h2 id="clean-flash">Clean Flash (First Time)</h2>
+    <p>Follow these steps if you are coming from stock MIUI or a different custom ROM.</p>
 
-          <div id="instructions-content" class="instructions-content">
-            <h4>⚠️ Before You Begin</h4>
-            <ul>
-              <li>Backup <strong>all important data</strong> to an external source. This process will erase your internal storage.</li>
-              <li>A <strong>clean flash</strong> is mandatory if you're switching from another ROM.</li>
-              <li>You <strong>must be on the latest firmware</strong> available for your device and region. Flash it manually if needed before proceeding.</li>
-              <li><strong>Recommended Recovery:</strong> Use <strong>AOSP recovery</strong>.</li>
-            </ul>
+    <h3>1. Boot to Fastboot</h3>
+    <pre><code>adb reboot bootloader</code></pre>
 
-            <h4>🧹 Clean Flash (Recommended for First‑Time Install)</h4>
-            <ol>
-              <li><strong>Boot into Fastboot mode</strong>
-                <pre><code>adb reboot bootloader</code></pre>
-              </li>
-              <li><strong>Flash the recovery image</strong>
-                <pre><code>fastboot flash boot &lt;recovery_filename&gt;.img</code></pre>
-              </li>
-              <li><strong>Reboot into Recovery</strong>
-                <pre><code>fastboot reboot recovery</code></pre>
-              </li>
-              <li><strong>Format data</strong> — In recovery:<br><code>Factory Reset &gt; Format Data</code></li>
-              <li>Connect the phone to your PC</li>
-              <li><strong>Sideload the ROM</strong> — In recovery: <code>Apply update &gt; Apply from ADB</code><br>On your PC:
-                <pre><code>adb sideload &lt;rom_filename&gt;.zip</code></pre>
-              </li>
-              <li>(Optional) When prompted, choose <strong>Yes</strong> to reboot to recovery again if flashing:
-                <ul>
-                  <li>GApps</li>
-                  <li>Magisk</li>
-                  <li>Any other .zip</li>
-                </ul>
-              </li>
-              <li>Format data again if you flashed anything in Step 7</li>
-              <li>If not flashing anything else, choose <strong>No</strong> when prompted</li>
-              <li>Reboot to system (first boot may take several minutes)</li>
-            </ol>
+    <h3>2. Flash Recovery</h3>
+    <p>Flash the recommended recovery image (boot.img or recovery.img depending on the package):</p>
+    <pre><code>fastboot flash boot &lt;recovery_filename&gt;.img</code></pre>
 
-            <h4>🔄 ROM Update / Dirty Flash (Updating Same ROM)</h4>
-            <h5>✅ Option 1: OTA Update</h5>
-            <ul>
-              <li>Go to: <code>Settings &gt; System &gt; Updater</code></li>
-              <li>Download and install the new build</li>
-              <li>Tap reboot</li>
-              <li>Done!</li>
-            </ul>
+    <h3>3. Reboot to Recovery</h3>
+    <pre><code>fastboot reboot recovery</code></pre>
 
-            <h5>✅ Option 2: Local Update (Via Updater App)</h5>
-            <ol>
-              <li>Place the new ROM .zip on your internal storage</li>
-              <li>Open the Updater app</li>
-              <li>Tap the 3‑dot menu &gt; <strong>Local Update</strong></li>
-              <li>Select the ROM .zip and confirm</li>
-              <li>Phone will reboot to recovery and apply the update</li>
-              <li>Done!</li>
-            </ol>
+    <h3>4. Format Data</h3>
+    <p>In Recovery, navigate to:</p>
+    <ul>
+      <li><strong>Factory Reset</strong> &gt; <strong>Format Data / Factory Reset</strong></li>
+    </ul>
+    <div class="custom-block danger">
+      <p class="custom-block-title">Warning</p>
+      <p>This will permanently erase all your photos, files, and apps.</p>
+    </div>
 
-            <h5>✅ Option 3: Manual Dirty Flash (ADB Sideload)</h5>
-            <ol>
-              <li>Boot into Recovery</li>
-              <li>In recovery: <code>Apply update &gt; Apply from ADB</code></li>
-              <li>On PC:
-                <pre><code>adb sideload &lt;rom_filename&gt;.zip</code></pre>
-              </li>
-              <li>(Optional) Reboot back to recovery and sideload:
-                <ul>
-                  <li>GApps</li>
-                  <li>Magisk</li>
-                </ul>
-              </li>
-              <li>Reboot to system</li>
-            </ol>
+    <h3>5. Sideload ROM</h3>
+    <p>On the phone: Select <strong>Apply Update</strong> &gt; <strong>Apply from ADB</strong>.<br>
+    On your PC: Run the following command:</p>
+    <pre><code>adb sideload &lt;rom_filename&gt;.zip</code></pre>
 
-            <h4>✅ You're Done!</h4>
-            <p>Enjoy your freshly installed or updated ROM.</p>
-          </div>
-        </article>
-      </div>
-    </section>
+    <h3>6. Finalize</h3>
+    <ul>
+      <li>If you want to flash GApps or Magisk: Go to <strong>Advanced</strong> &gt; <strong>Reboot to Recovery</strong> and sideload them now.</li>
+      <li>Otherwise, go back to main menu and tap <strong>Reboot system now</strong>.</li>
+    </ul>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section reveal reveal-right">
-      <div class="section-head">
-        <h2><i class="fa-solid fa-envelope icon"></i> Contact Me</h2>
-        <p>Got questions or feedback? Reach out via any of the platforms below.</p>
-      </div>
-      <div class="grid">
-        <article class="card">
-          <div class="card-icon" style="color:#0088cc;"><i class="fa-brands fa-telegram"></i></div>
-          <h3>Telegram</h3>
-          <p>Quick responses and real-time discussion.</p>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://t.me/mayuresh2543" target="_blank">Message Me</a>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-icon" style="color:#333;"><i class="fa-brands fa-github"></i></div>
-          <h3>GitHub</h3>
-          <p>View my repositories, report issues, or contribute.</p>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="https://github.com/mayuresh2543" target="_blank">Visit GitHub</a>
-          </div>
-        </article>
-      </div>
-    </section>
+    <hr style="border: 0; border-top: 1px solid var(--vp-c-border); margin: 48px 0;">
+
+    <h2 id="update">Update / Dirty Flash</h2>
+    <p>Use any of these methods to update your current ROM to a newer version.</p>
+
+    <h3>Method 1: OTA Update (Recommended)</h3>
+    <ol>
+      <li>Go to <strong>Settings</strong> &gt; <strong>System</strong> &gt; <strong>Updater</strong>.</li>
+      <li>Download and install the update.</li>
+      <li>The device will reboot automatically.</li>
+    </ol>
+
+    <h3>Method 2: Local Update (Via App)</h3>
+    <ol>
+      <li>Download the ROM zip and place it in internal storage.</li>
+      <li>Open the <strong>Updater</strong> app.</li>
+      <li>Tap the menu (3 dots) &gt; <strong>Local Update</strong>.</li>
+      <li>Select the zip file. The phone will reboot to recovery and install it.</li>
+    </ol>
+
+    <h3>Method 3: Manual Sideload</h3>
+    <p>If you prefer using a PC or if OTA fails:</p>
+    <ol>
+      <li>Reboot to Recovery.</li>
+      <li>Select <strong>Apply Update</strong> &gt; <strong>Apply from ADB</strong>.</li>
+      <li>On PC: <pre><code>adb sideload &lt;rom_filename&gt;.zip</code></pre></li>
+      <li>(Optional) Reboot to recovery and re-flash Magisk/GApps if needed.</li>
+      <li>Reboot System.</li>
+    </ol>
+
   </main>
 
-  <footer class="footer reveal reveal-up">
-    <div class="container">
-      <p>© <span id="year"></span> By Mayuresh — Built with ❤️, hosted on GitHub Pages.</p>
-    </div>
-  </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const toggleBtn = document.getElementById('toggle-instructions-btn');
-      const instructions = document.getElementById('instructions-content');
-      if (toggleBtn && instructions) {
-        toggleBtn.addEventListener('click', () => {
-          const isVisible = instructions.classList.toggle('visible');
-          toggleBtn.setAttribute('aria-expanded', isVisible);
-          toggleBtn.textContent = isVisible ? 'Hide Steps' : 'Show Steps';
-        });
-      }
-
-      // Copy buttons for code blocks
-      document.querySelectorAll('#instructions-content pre').forEach(pre => {
-        const btn = document.createElement('button');
-        btn.className = 'copy-btn';
-        btn.innerHTML = '<i class="fa-regular fa-clipboard"></i>';
-        btn.title = 'Copy to clipboard';
-        pre.appendChild(btn);
-        btn.addEventListener('click', () => {
-          const code = pre.innerText.trim();
-          navigator.clipboard.writeText(code).then(() => {
-            btn.innerHTML = '<i class="fa-solid fa-check"></i>';
-            btn.title = 'Copied!';
-            setTimeout(() => {
-              btn.innerHTML = '<i class="fa-regular fa-clipboard"></i>';
-              btn.title = 'Copy to clipboard';
-            }, 1500);
-          });
-        });
-      });
-    });
-  </script>
   <script src="script.js"></script>
 </body>
 </html>
